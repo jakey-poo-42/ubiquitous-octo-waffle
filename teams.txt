@@ -1,8 +1,8 @@
 HTML Team
 ==========
-[your name here]
+Allan Nevalga
 
 
 DBMS Team
 ==========
-[your name here]
+Jacob McGee
