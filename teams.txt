@@ -11,3 +11,4 @@ DBMS Team
 ==========
 Jacob McGee
 Hylton Williamson
+Christian O'Quinn
