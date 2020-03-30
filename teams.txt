@@ -1,6 +1,7 @@
 These teams are not set in stone, and you are free to work on whatever part of the project you please.
 This file is here to keep track on who is working on what part.
 Each team has their own branch. Access your branch by clicking the Branch dropdown just above the filelist.
+(I tried to do folders instead but I couldn't figure out how to do that for some reason)
 
 HTML Team
 ==========
