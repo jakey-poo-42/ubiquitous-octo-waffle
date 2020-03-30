@@ -1,8 +1,12 @@
+These teams are not set in stone, and you are free to work on whatever part of the project you please.
+
 HTML Team
 ==========
 Allan Nevalga
+Marco Muratti
 
 
 DBMS Team
 ==========
 Jacob McGee
+Hylton Williamson
