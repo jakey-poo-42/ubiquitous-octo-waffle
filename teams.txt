@@ -4,6 +4,7 @@ HTML Team
 ==========
 Allan Nevalga
 Marco Muratti
+Triet Nguyen
 
 
 DBMS Team
