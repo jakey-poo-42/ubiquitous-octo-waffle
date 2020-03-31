@@ -1,5 +1,3 @@
-Tables
-
 Customer
 -customer ID
 -payment ID
@@ -18,3 +16,10 @@ Discount Codes
 -item ID
 -customer ID
 -expiration date
+
+Address
+-customer id
+-street address
+-city
+-state
+-zip
