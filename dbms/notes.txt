@@ -9,7 +9,11 @@ Customer
 -order history?
 
 Items
+-name
 -item ID
 -price
--discount code
--expiration date
+
+Discount Codes
+-code
+-item ID
+-customer ID
