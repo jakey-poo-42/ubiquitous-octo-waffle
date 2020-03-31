@@ -1,0 +1,15 @@
+Tables
+
+Customer
+-customer ID
+-payment ID
+-address
+-name
+-cart?
+-order history?
+
+Items
+-item ID
+-price
+-discount code
+-expiration date
