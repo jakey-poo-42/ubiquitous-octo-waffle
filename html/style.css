@@ -1,0 +1,74 @@
+html 
+{
+    background-color: darkcyan;
+}
+
+
+#header
+{
+    background: url(images/dank.png) repeat-x;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 20px;
+    background-size: 100% 100%;
+}
+#header h1 
+{
+    height: 184px;
+    width: 282px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    line-height: 1;
+}
+#header h1 em 
+{
+    display: block;
+    padding: 23px 0 0 70px;
+    margin: 0;
+    position: relative;
+    font-weight: normal;
+    font-size: 28px;
+    font-family: "Times new roman", serif;
+}
+#body
+{
+background: white;
+}
+.items
+{
+background: white;
+color: gray;
+padding: 20px;
+display: flex;
+flex-direction: row;
+}
+.items figure
+{
+text-align: center;
+width:200px;
+margin: auto;
+}
+.items figure img
+{
+border-radius: 50%;
+width:240px;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
