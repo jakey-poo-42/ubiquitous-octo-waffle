@@ -1,5 +1,24 @@
 ﻿<!DOCTYPE html public>
 <html>
+<?php
+$hostname = 'localhost';
+$username = 'root'
+$password = 'Shockwave07';
+try{
+  $db = new PDO("mysql:host=$hostname;dbname=mysql", $username, $password);
+  echo 'Connected to SQL database.';
+}
+catch (PDOException $e)
+{
+  <!-- So  for whatever reason, once my web browser  gets to this line, it interprets the arrow
+  as the end of a comment. Anything after the arrow gets printed to the webpage instead of actually
+  being run. I can't seem to figure out how to get it to not do that. If you can figure it out,
+  that'd be awesome
+-->
+  echo $e->getMessage();
+}
+
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>COP4710 Project</title>
@@ -34,6 +53,13 @@
                 <figcaption>The United States Declaration of Independance</figcaption>
             </figure>
         </section>
-
+        <?php
+        $query = "SELECT i.itemName FROM item i";
+        $item = $db->query($query);
+        if($item->num_rows > 0):
+          while($row = $item->fetch_assoc()): ?>
+          <li><?php echo $row["itemName"]; ?><li>
+          <?php endwhile;
+        endif: ?>
 </body>
 </html>
