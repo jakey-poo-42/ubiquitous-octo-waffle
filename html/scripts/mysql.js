@@ -1,6 +1,5 @@
 function sqlQuery(q) {
   var mysql = require(['mysql']);
-  var resultSet = [];
 
   var con = mysql.createConnection({
     host: "localhost",
