@@ -1,30 +1,15 @@
 ﻿<!DOCTYPE html public>
 <html>
-<?php
-$hostname = 'localhost';
-$username = 'root'
-$password = 'Shockwave07';
-try{
-  $db = new PDO("mysql:host=$hostname;dbname=mysql", $username, $password);
-  echo 'Connected to SQL database.';
-}
-catch (PDOException $e)
-{
-  <!-- So  for whatever reason, once my web browser  gets to this line, it interprets the arrow
-  as the end of a comment. Anything after the arrow gets printed to the webpage instead of actually
-  being run. I can't seem to figure out how to get it to not do that. If you can figure it out,
-  that'd be awesome
--->
-  echo $e->getMessage();
-}
-
-?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>COP4710 Project</title>
     <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+    <script src="http://swarm.simplecartjs.com/js/inject.js"></script>
+    <script src="scripts/simpleCart.js"></script>
+    <script src="scripts/jquery.1.6.1.min.js"></script>
 </head>
 <body>
+        <!-- Intro -->
         <div id="header">
             <h1>Welcome to our <em>P o o P o o</em>Shopp</h1>
         </div>
@@ -34,33 +19,65 @@ catch (PDOException $e)
             <p>Please click on one of the following items to see more details for the item selected</p>
             <p>This will allow you get more details about the item, add it to your cart, or obtain a group discount code</p>
         </div>
+        
+        <!-- Items area -->
+
         <section class="items">
 
             <figure>
+                <div class="simpleCart_shelfItem">
                 <img src = "images/tuna.jpg" alt = "examine: a tuna sandwhich" >
                 <figcaption>A Tuna Sandwhich</figcaption>
-            </figure>
+                <figcaption>$3.99</figcaption>
+                <figcaption><a href="javascript:;" onclick="simpleCart.add({name:'JLG 460SJ Boom Lift', price: 3.99, thumb:'images/boom.png'});" >add to cart</a></figcaption>
+            
+
+                </div>
+                </figure>
             <figure>
-                <img src = "images/boom.jpg" alt = "examine: a useful boom lift" >
+                <img src = "images/boom.jpg" alt = "examine: a telescopic boom lift" >
                 <figcaption>JLG 460SJ Boom Lift</figcaption>
+                <figcaption>$42,900</figcaption>
+                <figcaption><a href="javascript:;" onclick="simpleCart.add({name:'JLG 460SJ Boom Lift', price: 42900, thumb:'images/boom.png'});" >add to cart</a></figcaption>
             </figure>
             <figure>
                 <img src = "images/spain.jpg" alt = "examine: Nobody expects the Spanish Inquistion!" >
                 <figcaption>The Country of Spain</figcaption>
+                <figcaption>$1,460,000,000</figcaption>
+                <figcaption ><a href="javascript:;" onclick="simpleCart.add({name:'The Country of Spain', price: 1460000000, thumb:'images/spain.jpg'});" >add to cart</a></figcaption>
             </figure>
             <figure>
                 <img src = "images/cage.jpg" alt = "A historian races to find the legendary Templar Treasure before a team of mercenaries.!" >
                 <figcaption>The United States Declaration of Independance</figcaption>
-            </figure>
+                <figcaption>$8,140,000</figcaption>
+                <figcaption> <a href="javascript:;" onclick="simpleCart.add({name:'Declaration of Independance', price: 8140000,thumb:'images/cage.png'});" >add to cart</a></figcaption>
+                </figure>
         </section>
-        <!-- This section is for testing and debugging purposes -->
-        <?php
-        $query = "SELECT i.itemName FROM item i";
-        $item = $db->query($query);
-        if($item->num_rows > 0):
-          while($row = $item->fetch_assoc()): ?>
-          <li><?php echo $row["itemName"]; ?><li>
-          <?php endwhile;
-        endif: ?>
+
+        <!-- Display items currently in shopping cart -->
+        <p>Items in your shopping cart</p>
+        <div></div>
+        <div class="simpleCart_items" >
+        </div>
+
+        <!-- Generate random discount code -->
+        <p>Would you like to generate a discount code? Press the button, copy the code and paste it at check out!</p>
+        <input type="button" style="font-size:9pt" value="Generate Code" onclick="document.getElementById('code').value = makeid()">
+        <p id="code"></p>
+        <script type="application/javascript" src="scripts/random.js"></script>
+
+        <p>Have a discount code? Please enter it here</p>
+        discount: <input type ="text" name="code"><p>
+        <input type="submit"  VALUE="submit"  NAME="submit"><p>
+        <!-- Show total and check out, discount not implemented yet -->
+        SubTotal: <span id="simpleCart_total" class="simpleCart_total"></span> <br />
+        Tax Rate: <span id="simpleCart_taxRate" class="simpleCart_taxRate"></span> <br />
+        Tax: <span id="simpleCart_tax" class="simpleCart_tax"></span> <br />
+        Shipping: <span id="simpleCart_shipping" class="simpleCart_shipping"></span> <br />
+        -----------------------------<br />
+        Final Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
+    
+        <a href="javascript:;" class="simpleCart_checkout">checkout</a>
+       
 </body>
 </html>
